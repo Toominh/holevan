@@ -665,6 +665,12 @@
                     <input type="file" accept=".json" style="display: none;" onchange="importJSON(event)">
                 </label>
             </div>
+            <div style="padding-top: 15px; border-top: 1px solid #334155; text-align: center;">
+        <button onclick="resetToDefault()" style="background: #ef4444; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; width: 100%; font-size: 14px;">
+            ⚠️ Xóa toàn bộ & Khôi phục mặc định
+        </button>
+        <p style="font-size: 12px; color: #94a3b8; margin-top: 8px;">Hành động này sẽ xóa sạch tất cả gia phả bạn đã tạo!</p>
+    </div>
         </div>
     </div>
 </div>
@@ -2207,7 +2213,18 @@ function closeListSearch() {
     function closeInstructionModal() {
         document.getElementById('instructionModal').style.display = 'none';
     }
-
+function resetToDefault() {
+    // Hiển thị hộp thoại xác nhận để tránh bấm nhầm
+    const confirmReset = confirm("BẠN CÓ CHẮC CHẮN KHÔNG?\n\nToàn bộ gia phả bạn đã tạo sẽ bị xóa vĩnh viễn và ứng dụng sẽ quay về dữ liệu mẫu ban đầu.");
+    
+    if (confirmReset) {
+        // 1. Xóa sạch dữ liệu trong LocalStorage
+        localStorage.clear();
+        
+        // 2. Tải lại trang (Khi load lại, logic khởi tạo sẽ tự tạo lại Gia phả mẫu mới)
+        window.location.reload();
+    }
+}
 </script>
 
 <!-- Modal Hướng Dẫn Mới -->
