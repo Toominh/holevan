@@ -18,7 +18,8 @@
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            margin: 0; padding-bottom: 90px; 
+            margin: 0; 
+            /*padding-bottom: 90px; */
             font-size: 16px;
             overflow: hidden;
             height: 100vh;
@@ -84,7 +85,9 @@
         .hide-force { display: none !important; }
 
         /* ---------------- MÀN HÌNH CHÍNH (DANH SÁCH) ---------------- */
-        #homeScreen { height: 100vh; overflow-y: auto; padding-bottom: 80px; }
+        #homeScreen { height: 100vh; overflow-y: auto; 
+            /*padding-bottom: 80px; */
+        }
 
         .tree-list-container {
             display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -117,7 +120,10 @@
         /* ---------------- FOOTER CHUNG ---------------- */
         footer { 
             display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;
-            position: fixed; bottom: 0; width: 100%; background: var(--container-bg); 
+            /*position: fixed; 
+            bottom: 0; */
+            width: 100%; 
+            /*background: var(--container-bg); */
             padding: 15px; border-top: 1px solid var(--border-color); z-index: 100; cursor: default; box-sizing: border-box;
         }
         
